@@ -59,4 +59,4 @@ The body of the article. Comes in two formats. *clean* and *minimal*. The clean 
 An array of image urls found in the body. Comes in sizes `full` for each image.
 
 **source**
-The url of the cnn article.
+The url of the bbc article.
