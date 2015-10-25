@@ -8,8 +8,6 @@ module.exports = (function() {
 
    return BBCReader;
 
-
-
    function BBCReader() {
       var self = this;
 
@@ -130,7 +128,15 @@ module.exports = (function() {
                }
             }
 
-            Article.datetime = new Date(datetime*1000).toISOString().replace('T', ' ').replace('Z', '') + ' GMT+0000';
+            if(datetime) {
+               Article.datetime = new Date(datetime*1000).toISOString().replace('T', ' ').replace('Z', '') + ' GMT+0000';
+            } else {
+               if(cb) {
+                  cb(null);
+               }
+
+               defer.resolve(null);
+            }
 
 
 
