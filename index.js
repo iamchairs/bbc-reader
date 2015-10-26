@@ -106,9 +106,20 @@ module.exports = (function() {
                var imgDiv = imgDivs[i];
                var srcFull = imgDiv.getAttribute('data-src');
                if(srcFull) {
-                  Article.images.push({
-                     full: srcFull
-                  });
+
+                  var found = false;
+                  for(var k = 0; k < Article.images.length; k++) {
+                     if(Article.images[k].full === srcFull) {
+                        found = true;
+                     }
+                  }
+
+                  if(!found) {
+                     Article.images.push({
+                        full: srcFull
+                     });
+                  }
+                  
                }
             }
 
