@@ -101,10 +101,12 @@ module.exports = (function() {
                         found = true;
                      }
                   }
-                  
-                  Article.images.push({
-                     full: srcFull
-                  });
+
+                  if(!found) {
+                     Article.images.push({
+                        full: srcFull
+                     });
+                  }
                }
             }
 
