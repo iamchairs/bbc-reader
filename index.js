@@ -94,6 +94,7 @@ module.exports = (function() {
             for(var i = 0; i < imgs.length; i++) {
                var img = imgs[i];
                var srcFull = img.getAttribute('src');
+               var caption = img.getAttribute('alt');
                if(srcFull) {
                   var found = false;
                   for(var k = 0; k < Article.images.length; k++) {
@@ -104,7 +105,8 @@ module.exports = (function() {
 
                   if(!found) {
                      Article.images.push({
-                        full: srcFull
+                        full: srcFull,
+                        caption: caption
                      });
                   }
                }
@@ -114,6 +116,7 @@ module.exports = (function() {
             for(var i = 0; i < imgDivs.length; i++) {
                var imgDiv = imgDivs[i];
                var srcFull = imgDiv.getAttribute('data-src');
+               var caption = imgDiv.getAttribute('data-alt');
                if(srcFull) {
 
                   var found = false;
@@ -125,7 +128,8 @@ module.exports = (function() {
 
                   if(!found) {
                      Article.images.push({
-                        full: srcFull
+                        full: srcFull,
+                        caption: caption
                      });
                   }
                   
