@@ -95,6 +95,13 @@ module.exports = (function() {
                var img = imgs[i];
                var srcFull = img.getAttribute('src');
                if(srcFull) {
+                  var found = false;
+                  for(var k = 0; k < Article.images.length; k++) {
+                     if(Article.images[k].full === srcFull) {
+                        found = true;
+                     }
+                  }
+                  
                   Article.images.push({
                      full: srcFull
                   });
