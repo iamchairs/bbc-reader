@@ -105,7 +105,7 @@ module.exports = (function() {
             var imgs = body.getElementsByTagName('img');
             for(var i = 0; i < imgs.length; i++) {
                var img = imgs[i];
-               var srcFull = img.getAttribute('src');
+               var srcFull = img.getAttribute('src').replace('/320/', '/800/');
                var caption = img.getAttribute('alt');
                if(srcFull) {
                   var found = false;
