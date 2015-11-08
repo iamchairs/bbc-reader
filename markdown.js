@@ -112,6 +112,7 @@ module.exports = function(dom) {
   function img(dom) {
     var alt = dom.getAttribute('alt') || dom.getAttribute('data-alt');
     var src = dom.getAttribute('src') || dom.getAttribute('data-src');
+    src.replace('/320/', '/800/')
     
     return '![' + alt + '](' + src + ')\n\n';
   }
